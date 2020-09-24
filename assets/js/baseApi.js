@@ -16,7 +16,7 @@ $.ajaxPrefilter(function(options) {
     //在全局挂载complete回调函数，优化了代码的书写量
     options.complete = function(res) {
         //通过res.responseJSON可以得到服务器相应过来的数据
-        console.log(res);
+        // console.log(res);
         //下面要进行判断，如果res.responseJSON.status===1&&res.responseJSON.message='...'那么就强制删除token并且强制跳转到登录页面
         if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
             localStorage.removeItem('token')
